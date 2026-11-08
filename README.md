@@ -16,6 +16,10 @@
   <a href="https://x.com/useKyte">@useKyte</a>
 </p>
 
+<p align="center">
+  <a href="https://heyresearch.xyz/project/kyte"><img src="https://heyresearch.xyz/api/badge/kyte" alt="Kyte on HEY Research Lab" /></a>
+</p>
+
 ---
 
 ## What it is
