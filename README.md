@@ -176,6 +176,18 @@ Report a vulnerability: see [SECURITY.md](SECURITY.md).
 Options are risky and can expire worthless. Kyte's tools provide information, not financial advice. Kyte is not
 affiliated with or endorsed by Robinhood.
 
+## Contracts (Robinhood Chain, chain id 4663)
+
+| | |
+|---|---|
+| KYTE token | `0x072D88c2F31F568C0F4B8F613692eB489541Ed45` |
+| CallMarket v3 | `0xb6759D8893601BB7c1A032eC8ea40C856a6adf80` |
+| PutMarket v3 | `0x2E2d5DfB4cf30d15688Cc2DDD30641c78DFfcb35` |
+| Router v3 | `0xdD76956667E6423bAC56d2EbF827a9b0d7dBDF68` |
+| StakingPool | `0xD7253a90fd43507F44cF0934F3D5d7432760d17f` |
+
+Full list and older market sets: https://kyte.sh/docs#contracts
+
 ## License
 
 MIT
