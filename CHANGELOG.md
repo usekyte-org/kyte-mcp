@@ -3,6 +3,7 @@
 What shipped on Kyte, newest first. Dates are UTC. Contracts and addresses: https://kyte.sh/docs.
 
 ## 2026-11-08
+- Stock-token session state from Harmonic Agent's oracle: `get_prices`, `list_tokens`, `find_offers`, `get_offer` and the prepare tools return `session` (open, held over the weekend, halted, paused, stale) and a `warning` when the quote is not live, with the weekend on-chain mark. Market, Sell and Positions on kyte.sh show the same as a badge. Plan and status: gust `docs/HARMONIC.md`.
 - Oak Agent Kit recipes published: `oak recipes add kyte-oak-recipes` gives any Oak agent 23 Kyte recipes (buy, sell, exercise, cancel, expire, stake) on Robinhood Chain. https://www.npmjs.com/package/kyte-oak-recipes
 - Listed on the HOL (Hashgraph Online) registry and AI Plugin Registry; HOL Guard catalog entry. https://hol.org/registry/plugins/usekyte%2Fkyte-mcp
 - Autopilot public on production: plain-language rules the user signs once; Kyte prepares the transaction when the condition holds.

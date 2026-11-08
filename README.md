@@ -101,11 +101,11 @@ Install this repository as a plugin or extension: `.codex-plugin/plugin.json` an
 
 | Tool | What it returns |
 |---|---|
-| `list_tokens` | Listed tokens, puts on or off, exposure cap, minimum strike; Pons tokens are marked with their 24 h expiry rule |
-| `find_offers` | Open offers to buy now, by token and kind, soonest expiry first |
+| `list_tokens` | Listed tokens, puts on or off, exposure cap, minimum strike; Pons tokens are marked with their 24 h expiry rule; stock tokens carry a `session` state and a `warning` when the stock is not trading |
+| `find_offers` | Open offers to buy now, by token and kind, soonest expiry first; a `warning` on rows whose underlying is halted or in its weekend hold |
 | `get_offer` | One offer or position in full: terms, seller, holder, status, fees, creating transaction |
 | `get_positions` | What an address holds, is selling, and its recent history |
-| `get_prices` | Live price in ETH per token, 1 h change and source (Uniswap v4 or Robinhood quote) |
+| `get_prices` | Price in ETH per token, 1 h change, source (Uniswap v4 or Robinhood quote) and, for stock tokens, `session`: `open`, `held` (weekend), `halted`, `paused` or `stale`, with a `warning` when the quote is the last print rather than live |
 | `get_chart` | Recent OHLC candles for a token |
 | `get_staking` | $KYTE staked, epoch timing, rewards, and an address's stake and claimable WETH |
 | `get_protocol_stats` | Volume, fees, open interest, $KYTE burned and staked, stakers, offers |
@@ -128,7 +128,16 @@ Install this repository as a plugin or extension: `.codex-plugin/plugin.json` an
 | `design_strategy` | An Autopilot rule from plain language, with a 30-day look back and a link to sign it |
 
 Every prepare tool returns a preview and a `https://kyte.sh/...` link. Nothing happens until the user opens it and
-signs in their wallet.
+signs in their wallet. On a stock token that is halted or in its weekend hold, the result also carries a `warning`
+first: the spot is the last print, not a live price.
+
+### Stock-token sessions
+
+Robinhood stock tokens stop printing when the stock is halted and from Friday 20:00 to Sunday 20:00 New York, while
+the token keeps trading on chain. Kyte reads [Harmonic Agent's](https://harmonicagent.solutions/) session oracle
+and weekend mark, so `get_prices`, `list_tokens`, `find_offers`, `get_offer` and the prepare tools say when a spot
+is Friday's print and where the token traded on chain over the weekend. Pair this server with Harmonic's
+(`https://harmonicagent.solutions/mcp/registry`) for the oracle rows themselves.
 
 ## Prompts and resources
 
