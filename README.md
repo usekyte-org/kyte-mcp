@@ -18,6 +18,7 @@
 
 <p align="center">
   <a href="https://heyresearch.xyz/project/kyte"><img src="https://heyresearch.xyz/api/badge/kyte" alt="Kyte on HEY Research Lab" /></a>
+  <a href="https://mcptry.com/servers/sh.kyte/kyte"><img src="https://mcptry.com/badge/sh.kyte/kyte" alt="mcptry live status and score" /></a>
 </p>
 
 ---
